@@ -11,6 +11,8 @@
     },
     "devDependencies": {
         "axios": "^0.25",
+        "eslint": "^4.19.1",
+        "eslint-plugin-vue": "^8.5.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -22,5 +24,9 @@
         "vue-router": "^4.0.12",
         "vue-template-compiler": "^2.6.14",
         "vuex": "^4.0.2"
+    },
+    "dependencies": {
+        "babel-eslint": "^8.2.6",
+        "jslint": "^0.12.1"
     }
 }

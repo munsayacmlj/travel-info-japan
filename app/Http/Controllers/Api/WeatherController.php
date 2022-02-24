@@ -8,7 +8,7 @@ use App\Classes\Weather;
 class WeatherController extends Controller
 {
     public function weatherForcast($city)
-    {   
+    {
         $cities = [
             'tokyo',
             'yokohama',
