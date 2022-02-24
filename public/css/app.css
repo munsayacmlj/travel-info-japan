@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #4c4c4c;
+  background-image: url("/images/sakura.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hidden {
+  display: none;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.page-subtitle,
+.no-data {
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .page-subtitle,
+.no-data {
+    text-align: left;
+  }
+}
+
+.main-container {
+  max-width: 90%;
+  margin: auto;
+  padding-top: 3.125rem;
+}
+
+.weather {
+  background-color: rgba(245, 254, 255, 0.8);
+  border-radius: 0.625rem;
+}
+.weather__current-city {
+  margin-top: 2rem;
+}
+.weather__time-interval {
+  text-align: center;
+}
+.weather__days-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 9rem;
+  margin: auto;
+}
+@media (min-width: 1024px) {
+  .weather__days-list {
+    flex-direction: row;
+    max-width: 100%;
+  }
+}
+.weather__current-day {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem auto 0;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .weather__current-day {
+    flex-direction: row;
+  }
+}
+.weather__now {
+  text-align: center;
+  font-size: 2rem;
+}
+.weather__day-button {
+  padding: 0.3125rem;
+  margin: 0.3125rem;
+  background-color: #dbd4d4;
+  border: 1px solid #dbd4d4;
+  cursor: pointer;
+}
+.weather__day-button.active {
+  background-color: #535853;
+  color: white;
+}
+
+.loading {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.time:nth-child(even) {
+  background-color: #cbcbcb;
+}
+.time__figcaption {
+  font-weight: 500;
+}
+.time__update-time {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+}
+.time__temperature {
+  font-size: 2rem;
+}
+.time__feels-like, .time__wind, .time__snow {
+  font-size: 0.75rem;
+  line-height: normal;
+  padding: 0;
+}
+
+.places {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .places {
+    flex-direction: row;
+  }
+}
+.places__title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+}
+.places__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 100%;
+  padding: 2rem;
+  margin: 0.3125rem;
+  background-color: #dfb5b5;
+  border-radius: 0.625rem;
+}
+@media (min-width: 1024px) {
+  .places__item {
+    flex: 0 0 calc(33.3333333333% - 0.625rem);
+  }
+}
+.places__item-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.places__item-name {
+  margin-bottom: 0.3125rem;
+}
+.places__item-icons, .places__item-categories {
+  margin-bottom: 1rem;
+}
+.places__item-categories {
+  display: flex;
+  justify-content: flex-start;
+}
+.places__item-category {
+  padding: 0.3125rem;
+  background-color: #adadad;
+  border: 1px solid #dbd4d4;
+  font-size: 0.75rem;
+  margin-right: 0.3125rem;
+  border-radius: 0.3125rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  max-width: 9rem;
+  margin: auto;
+}
+@media (min-width: 1024px) {
+  .buttons {
+    flex-direction: row;
+    max-width: 100%;
+  }
+}
+.buttons .city-button {
+  padding: 0.625rem;
+  background-color: #e39f9f;
+  border: none;
+  margin: 0.3125rem;
+  cursor: pointer;
+}
+.buttons .city-button:hover {
+  background-color: #b99a9a;
+}
+.buttons .city-button.active {
+  background-color: #535853;
+  color: white;
+}
