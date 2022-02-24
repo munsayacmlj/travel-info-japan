@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div v-if="Object.keys(temperatureCollection).length">
+    <div v-if="Object.keys(cache).length">
       <Weather :daysCollection="daysCollection" :cache="cache" :currentDay="currentDay" :city="city"/>
     </div>
     <h2 v-else class="no-data">No data...</h2>
@@ -40,7 +40,6 @@ export default {
     return {
       city: '',
       daysCollection: [],
-      temperatureCollection: {},
       cache: {},
       currentDay: '',
       cityDetails: {},
@@ -70,12 +69,12 @@ export default {
       // load API
       axios.get(`/api/${this.city.toLowerCase()}`)
           .then(response => {
-            this.temperatureCollection = response.data.temperature_collection;
+            const temperatureCollection = response.data.temperature_collection;
             this.daysCollection = response.data.days_collection;
             this.cityDetails = response.data.city_details;
 
             this.cache[this.city] = {};
-            this.cache[this.city]['temperatures'] = this.temperatureCollection;
+            this.cache[this.city]['temperatures'] = temperatureCollection;
             this.currentDay = this.daysCollection[0];
             this.$refs.cityButton.forEach(element => {
               element.removeAttribute('disabled');

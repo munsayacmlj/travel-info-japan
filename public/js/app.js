@@ -19387,7 +19387,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       city: '',
       daysCollection: [],
-      temperatureCollection: {},
       cache: {},
       currentDay: '',
       cityDetails: {},
@@ -19416,11 +19415,11 @@ __webpack_require__.r(__webpack_exports__);
 
       // load API
       axios.get("/api/".concat(this.city.toLowerCase())).then(function (response) {
-        _this.temperatureCollection = response.data.temperature_collection;
+        var temperatureCollection = response.data.temperature_collection;
         _this.daysCollection = response.data.days_collection;
         _this.cityDetails = response.data.city_details;
         _this.cache[_this.city] = {};
-        _this.cache[_this.city]['temperatures'] = _this.temperatureCollection;
+        _this.cache[_this.city]['temperatures'] = temperatureCollection;
         _this.currentDay = _this.daysCollection[0];
 
         _this.$refs.cityButton.forEach(function (element) {
@@ -19601,7 +19600,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), Object.keys(_ctx.temperatureCollection).length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Weather, {
+  ))])]), Object.keys(_ctx.cache).length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Weather, {
     daysCollection: _ctx.daysCollection,
     cache: _ctx.cache,
     currentDay: _ctx.currentDay,
