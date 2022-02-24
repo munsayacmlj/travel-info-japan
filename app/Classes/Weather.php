@@ -13,12 +13,6 @@ class Weather
      */
     const BASE_URI = "https://api.openweathermap.org/data/2.5/forecast";
 
-    /**
-     * APP ID for openweathermap API.
-     */
-    const OPEN_WEATHER_MAP_API_KEY = "64cec784a2b5e819a182a051694158a3";
-
-
     public static function forcast(String $city): array
     {
       $client = new Client();
@@ -26,7 +20,7 @@ class Weather
 
       $params = [
           'q' =>    "{$city},jp",
-          'appid' =>    self::OPEN_WEATHER_MAP_API_KEY,
+          'appid' =>    config('services.openweathermap.key'),
           'units' =>    'metric',
       ];
 
